@@ -72,7 +72,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
         ko: "재료 물성의 전산 모델링 및 재료 과학을 위한 기계 학습 응용 분야 전문가."
       },
       imageSrc: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29uLG1hbnx8fHx8fDE2Nzk5MDU2MjA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
-      featured: true,
+      featured: false,
       socialLinks: {
         github: "#",
         linkedin: "#",
@@ -84,15 +84,13 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
       position: "PhD Candidate",
       category: "phd",
       bio: {
-        en: "Researching advanced deep learning techniques for materials property prediction and synthesis optimization.",
-        ko: "재료 물성 예측 및 합성 최적화를 위한 고급 딥러닝 기술 연구."
+        en: "Additive manufacturing; Generative models (Stable diffusion, diffusion models); Large Language Models (LLMs)",
+        ko: "Additive manufacturing; Generative models (Stable diffusion, diffusion models); Large Language Models (LLMs)"
       },
-      imageSrc: "https://images.unsplash.com/photo-1539571696357-5a69c17a67c6?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29uLG1hbnx8fHx8fHx8MTY3OTkwNTY4NQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
-      featured: false,
+      imageSrc: "images/lab_members/phan_hoang_cuong.jpg",
+      featured: true,
       socialLinks: {
-        github: "#",
-        linkedin: "#",
-        email: "phcuong@aimat.kr"
+        email: "hoangcuong@kims.re.kr"
       }
     },
     {

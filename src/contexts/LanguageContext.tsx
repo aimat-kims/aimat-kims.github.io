@@ -195,8 +195,8 @@ const translations: Record<string, Record<Language, string>> = {
     ko: "민 티엔 트란 박사"
   },
   "team.members.phcuong.name": {
-    en: "Phan Huang Cuong",
-    ko: "판 황 쿠옹"
+    en: "Phan Hoang Cuong",
+    ko: "Phan Hoang Cuong"
   },
   "team.members.nhnam.name": {
     en: "Nguyen Hai Nam",
