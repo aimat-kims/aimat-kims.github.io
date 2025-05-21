@@ -168,7 +168,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
   // Helper function to render team member cards
   const renderMemberCard = (member: TeamMember) => (
     <Card key={member.key} className="overflow-hidden border-none shadow-md card-hover">
-      <div className="aspect-[4/3] w-full overflow-hidden">
+      <div className="aspect-[3/4] w-full overflow-hidden">
         <img 
           src={member.imageSrc} 
           alt={t(`team.members.${member.key}.name`) || member.key} 
@@ -200,8 +200,9 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
             </a>
           )}
           {member.socialLinks.email && (
-            <a href={`mailto:${member.socialLinks.email}`} className="hover:text-aimat-primary transition-colors" aria-label="Email">
+            <a href={`mailto:${member.socialLinks.email}`} className="hover:text-aimat-primary transition-colors flex items-center gap-2" aria-label="Email">
               <Mail size={20} />
+              <span className="text-sm">{member.socialLinks.email}</span>
             </a>
           )}
         </CardFooter>
