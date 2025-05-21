@@ -198,6 +198,10 @@ const translations: Record<string, Record<Language, string>> = {
     en: "Phan Hoang Cuong",
     ko: "Phan Hoang Cuong"
   },
+  "team.members.mooyeong_joo.name": {
+    en: "Mooyeong Joo",
+    ko: "Mooyeong Joo"
+  },
   "team.members.nhnam.name": {
     en: "Nguyen Hai Nam",
     ko: "응우옌 하이 남"

@@ -1,6 +1,6 @@
 import React from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Github, Twitter, Linkedin, Mail, ArrowUpRight } from 'lucide-react';
+import { Twitter, Mail, ArrowUpRight, Globe } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
@@ -20,6 +20,7 @@ type TeamMember = {
     twitter?: string;
     linkedin?: string;
     email?: string;
+    googleScholar?: string;
   };
 };
 
@@ -43,8 +44,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
       imageSrc: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29ufHx8fHx8MTY3OTkwNTI5Mg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
       featured: true,
       socialLinks: {
-        github: "#",
-        linkedin: "#",
+        googleScholar: "https://scholar.google.com/citations?user=example1",
         email: "hwlee@aimat.kr"
       }
     },
@@ -59,7 +59,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
       imageSrc: "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29uLG1hbnx8fHx8fHx8MTY3OTkwNTY4NQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
       featured: true,
       socialLinks: {
-        linkedin: "#",
+        googleScholar: "https://scholar.google.com/citations?user=example2",
         email: "ykim@aimat.kr"
       }
     },
@@ -72,10 +72,9 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
         ko: "재료 물성의 전산 모델링 및 재료 과학을 위한 기계 학습 응용 분야 전문가."
       },
       imageSrc: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29uLG1hbnx8fHx8fDE2Nzk5MDU2MjA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
-      featured: false,
+      featured: true,
       socialLinks: {
-        github: "#",
-        linkedin: "#",
+        googleScholar: "https://scholar.google.com/citations?user=example3",
         email: "mtran@aimat.kr"
       }
     },
@@ -88,9 +87,24 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
         ko: "Additive manufacturing; Generative models (Stable diffusion, diffusion models); Large Language Models (LLMs)"
       },
       imageSrc: "images/lab_members/phan_hoang_cuong.jpg",
-      featured: true,
+      featured: false,
       socialLinks: {
         email: "hoangcuong@kims.re.kr"
+      }
+    },
+    {
+      key: "mooyeong_joo",
+      position: "PhD Candidate",
+      category: "phd",
+      bio: {
+        en: "Interested in integrating crystal plasticity model with deep learning to develop hybrid frameworks that improve the predictive accuracy and computational efficiency",
+        ko: "Interested in integrating crystal plasticity model with deep learning to develop hybrid frameworks that improve the predictive accuracy and computational efficiency"
+      },
+      imageSrc: "images/lab_members/mooyeong_joo.jpg",
+      featured: false,
+      socialLinks: {
+        googleScholar: "https://scholar.google.com/citations?user=EvrZBGQAAAAJ",
+        email: "mooyeongj@kims.re.kr",
       }
     },
     {
@@ -104,7 +118,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
       imageSrc: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29uLG1hbnx8fHx8fHx8MTY3OTkwNTY4NQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
       featured: false,
       socialLinks: {
-        github: "#",
+        googleScholar: "https://scholar.google.com/citations?user=example6",
         email: "nhnam@aimat.kr"
       }
     },
@@ -119,7 +133,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
       imageSrc: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29uLG1hbnx8fHx8fHx8MTY3OTkwNTY4NQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
       featured: false,
       socialLinks: {
-        linkedin: "#",
+        googleScholar: "https://scholar.google.com/citations?user=example7",
         email: "hjlee@aimat.kr"
       }
     },
@@ -134,7 +148,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
       imageSrc: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29uLHdvbWFufHx8fHx8MTY3OTkwNTgxNg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
       featured: false,
       socialLinks: {
-        linkedin: "#",
+        googleScholar: "https://scholar.google.com/citations?user=example8",
         email: "sean@aimat.kr"
       }
     },
@@ -149,7 +163,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
       imageSrc: "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29ufHx8fHx8MTY3OTkwNTI5Mg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
       featured: false,
       socialLinks: {
-        linkedin: "#",
+        googleScholar: "https://scholar.google.com/citations?user=example9",
         email: "jkim@example.com"
       }
     }
@@ -179,24 +193,18 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
         <CardTitle className="font-heading text-xl">{t(`team.members.${member.key}.name`)}</CardTitle>
         <CardDescription className="text-aimat-primary font-medium">{t(`team.positions.${member.position}`) || member.position}</CardDescription>
       </CardHeader>
-      <CardContent>
-        <p className="text-gray-600">{member.bio[language]}</p>
-      </CardContent>
+      
       {member.socialLinks && (
         <CardFooter className="flex gap-4 text-gray-500">
-          {member.socialLinks.github && (
-            <a href={member.socialLinks.github} className="hover:text-aimat-primary transition-colors" aria-label="GitHub">
-              <Github size={20} />
+          {member.socialLinks.googleScholar && (
+            <a href={member.socialLinks.googleScholar} className="hover:text-aimat-primary transition-colors flex items-center gap-2" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer">
+              <Globe size={20} />
+              <span className="text-sm">Google Scholar</span>
             </a>
           )}
           {member.socialLinks.twitter && (
             <a href={member.socialLinks.twitter} className="hover:text-aimat-primary transition-colors" aria-label="Twitter">
               <Twitter size={20} />
-            </a>
-          )}
-          {member.socialLinks.linkedin && (
-            <a href={member.socialLinks.linkedin} className="hover:text-aimat-primary transition-colors" aria-label="LinkedIn">
-              <Linkedin size={20} />
             </a>
           )}
           {member.socialLinks.email && (
@@ -207,6 +215,9 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
           )}
         </CardFooter>
       )}
+      <CardContent>
+        <p className="text-gray-600">{member.bio[language]}</p>
+      </CardContent>
     </Card>
   );
 
