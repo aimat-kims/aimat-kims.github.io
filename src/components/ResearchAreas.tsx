@@ -1,11 +1,11 @@
 import React from 'react';
 import { 
-  Atom, 
-  Braces, 
-  Database, 
+  Brain, 
+  Search, 
+  FlaskConical, 
   Cog, 
-  BarChart4, 
-  Lightbulb,
+  Bot, 
+  Layers,
   ArrowUpRight 
 } from 'lucide-react';
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
@@ -29,33 +29,33 @@ const ProjectAreas: React.FC<ProjectAreasProps> = ({ showAll = false, showSectio
   
   const projectAreas: ProjectArea[] = [
     {
-      key: "generative",
-      icon: <Atom className="h-10 w-10 text-aimat-primary" />,
+      key: "deeplearning",
+      icon: <Brain className="h-10 w-10 text-aimat-primary" />,
       featured: true
     },
     {
-      key: "inverse",
-      icon: <Braces className="h-10 w-10 text-aimat-primary" />,
+      key: "mldiscovery",
+      icon: <Search className="h-10 w-10 text-aimat-primary" />,
       featured: true
     },
     {
-      key: "database",
-      icon: <Database className="h-10 w-10 text-aimat-primary" />,
+      key: "mltest",
+      icon: <FlaskConical className="h-10 w-10 text-aimat-primary" />,
       featured: true
     },
     {
-      key: "synthesis",
+      key: "mlprocess",
       icon: <Cog className="h-10 w-10 text-aimat-primary" />,
       featured: false
     },
     {
-      key: "prediction",
-      icon: <BarChart4 className="h-10 w-10 text-aimat-primary" />,
+      key: "autonomouslab",
+      icon: <Bot className="h-10 w-10 text-aimat-primary" />,
       featured: false
     },
     {
-      key: "applications",
-      icon: <Lightbulb className="h-10 w-10 text-aimat-primary" />,
+      key: "multiscale",
+      icon: <Layers className="h-10 w-10 text-aimat-primary" />,
       featured: false
     }
   ];

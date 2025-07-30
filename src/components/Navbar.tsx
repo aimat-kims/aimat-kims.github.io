@@ -35,6 +35,7 @@ const Navbar = () => {
               <Link to="/team" className={`font-medium hover:text-aimat-primary ${isActive('/team')}`}>{t('nav.team')}</Link>
               <Link to="/publications" className={`font-medium hover:text-aimat-primary ${isActive('/publications')}`}>{t('nav.publications')}</Link>
               <Link to="/contact" className={`font-medium hover:text-aimat-primary ${isActive('/contact')}`}>{t('nav.contact')}</Link>
+              <Link to="/join-us" className={`font-medium hover:text-aimat-primary ${isActive('/join-us')}`}>{t('nav.joinLab')}</Link>
             </div>
           </div>
           <div className="hidden md:flex items-center space-x-3">
@@ -46,9 +47,6 @@ const Navbar = () => {
             >
               <Globe className="h-4 w-4" />
               {language === 'en' ? t('language.korean') : t('language.english')}
-            </Button>
-            <Button variant="outline" className="border-aimat-primary text-aimat-primary hover:bg-aimat-light">
-              {t('nav.joinLab')}
             </Button>
           </div>
           <div className="flex items-center md:hidden">
@@ -71,6 +69,7 @@ const Navbar = () => {
             <Link to="/team" className={`block py-2 font-medium hover:text-aimat-primary ${isActive('/team')}`}>{t('nav.team')}</Link>
             <Link to="/publications" className={`block py-2 font-medium hover:text-aimat-primary ${isActive('/publications')}`}>{t('nav.publications')}</Link>
             <Link to="/contact" className={`block py-2 font-medium hover:text-aimat-primary ${isActive('/contact')}`}>{t('nav.contact')}</Link>
+            <Link to="/join-us" className={`block py-2 font-medium hover:text-aimat-primary ${isActive('/join-us')}`}>{t('nav.joinLab')}</Link>
           </div>
           <div className="pt-4 pb-3 border-t border-gray-200 px-4 space-y-3">
             <Button 
@@ -81,9 +80,6 @@ const Navbar = () => {
             >
               <Globe className="h-4 w-4" />
               {language === 'en' ? t('language.korean') : t('language.english')}
-            </Button>
-            <Button variant="outline" className="w-full border-aimat-primary text-aimat-primary hover:bg-aimat-light">
-              {t('nav.joinLab')}
             </Button>
           </div>
         </div>

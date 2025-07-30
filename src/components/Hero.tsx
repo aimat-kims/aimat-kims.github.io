@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from '@/components/ui/button';
 import { ArrowRight, Zap, Database, Lightbulb } from 'lucide-react';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Link } from 'react-router-dom';
 
 const Hero = () => {
   const { t } = useLanguage();
@@ -19,13 +20,17 @@ const Hero = () => {
               {t('hero.subtitle')}
             </p>
             <div className="flex flex-col sm:flex-row gap-4">
-              <Button className="bg-aimat-primary hover:bg-aimat-secondary text-white font-medium px-6 py-3 rounded-lg">
-                {t('hero.exploreButton')}
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-              <Button variant="outline" className="border-aimat-primary text-aimat-primary hover:bg-aimat-light">
-                {t('hero.joinButton')}
-              </Button>
+              <Link to="/publications">
+                <Button className="bg-aimat-primary hover:bg-aimat-secondary text-white font-medium px-6 py-3 rounded-lg">
+                  {t('hero.exploreButton')}
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </Link>
+              <Link to="/join-us">
+                <Button variant="outline" className="border-aimat-primary text-aimat-primary hover:bg-aimat-light">
+                  {t('hero.joinButton')}
+                </Button>
+              </Link>
             </div>
           </div>
           <div className="col-span-1 lg:col-span-5 animate-fade-in">

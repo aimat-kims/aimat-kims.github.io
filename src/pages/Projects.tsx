@@ -4,7 +4,7 @@ import ProjectAreas from '@/components/ResearchAreas';
 import Footer from '@/components/Footer';
 import { Card, CardContent, CardHeader, CardTitle, CardDescription } from '@/components/ui/card';
 import { Badge } from '@/components/ui/badge';
-import { Clock, Users, GitBranch } from 'lucide-react';
+import { GitBranch } from 'lucide-react';
 import { useScrollToTop } from '@/hooks/use-scroll-top';
 
 const Projects = () => {
@@ -14,31 +14,34 @@ const Projects = () => {
   // Example data for current running projects
   const currentProjects = [
     {
-      title: "AI-Guided Battery Electrode Design",
-      description: "Development of novel electrode materials for high-capacity batteries using diffusion models and generative design algorithms.",
-      startDate: "Jan 2025",
-      endDate: "Dec 2025",
+      title: "Phase Segmentation using Self-Supervised Learning",
+      description: "Development of SSL algorithms for accurate phase segmentation in materials microstructures, combined with autonomous lab systems for accelerated materials discovery.",
       status: "Active",
-      team: ["Dr. Min-Seok Park", "Dr. Ji-Hyun Kim", "Dr. Tae-Yeon Lee"],
-      tags: ["Battery Materials", "Generative AI", "Materials Design"]
+      tags: ["SSL Algorithm", "Phase Segmentation", "Autonomous Lab", "Materials Discovery"]
     },
     {
-      title: "Self-Healing Alloy Development",
-      description: "Creating machine learning models to predict and design self-healing metal alloys with enhanced mechanical properties and corrosion resistance.",
-      startDate: "Mar 2025",
-      endDate: "Feb 2026",
+      title: "AI-based Indentation Testing for Sheet Metal Anisotropy",
+      description: "Creating intelligent indentation testing methodologies using deep learning to accurately measure sheet metal anisotropy and mechanical properties.",
       status: "Active",
-      team: ["Dr. Jin-Woo Choi", "Dr. Mi-Sook Kang"],
-      tags: ["Alloys", "Self-healing", "Property Prediction"]
+      tags: ["AI Testing", "Indentation", "Sheet Metal", "Anisotropy Measurement"]
     },
     {
-      title: "Knowledge Graph-Enhanced Materials Discovery",
-      description: "Building comprehensive materials knowledge graphs and using graph neural networks to accelerate the discovery of functional materials.",
-      startDate: "Feb 2025",
-      endDate: "Oct 2025",
+      title: "FLD Prediction using GAN and CNN",
+      description: "Developing advanced neural networks including GANs and CNNs for Forming Limit Diagram prediction, with GNN-based finite element modeling for process optimization.",
       status: "Active",
-      team: ["Dr. Young-Jun Park", "Dr. Ji-Hyun Kim"],
-      tags: ["Knowledge Graphs", "Graph Neural Networks", "Materials Informatics"]
+      tags: ["GAN", "CNN", "FLD Prediction", "GNN-based FEM"]
+    },
+    {
+      title: "CPFE-VPSC Multiscale Simulation",
+      description: "Implementation of Crystal Plasticity Finite Element and Viscoplastic Self-Consistent methods for forming limit diagram prediction and metallurgical phenomena modeling.",
+      status: "Active",
+      tags: ["CPFE", "VPSC", "Multiscale Simulation", "Crystal Plasticity"]
+    },
+    {
+      title: "Cellular Automata for Metallurgical Phenomena",
+      description: "Advanced cellular automata modeling of phase transformation, static recrystallization, and strain-induced dynamic transformation in metal processing.",
+      status: "Active",
+      tags: ["Cellular Automata", "Phase Transformation", "Recrystallization", "Dynamic Transformation"]
     }
   ];
 
@@ -50,7 +53,7 @@ const Projects = () => {
           <div className="container mx-auto px-4">
             <h1 className="text-4xl font-bold mb-4 text-center text-white">Our Projects</h1>
             <p className="text-xl text-center text-white/90 max-w-3xl mx-auto">
-              Exploring the frontiers of AI-driven materials discovery with our innovative research projects
+              Advanced AI and machine learning research projects for materials discovery, testing, and processing optimization
             </p>
           </div>
         </div>
@@ -76,17 +79,6 @@ const Projects = () => {
                   <CardDescription className="text-gray-600 text-base mb-6">
                     {project.description}
                   </CardDescription>
-                  
-                  <div className="space-y-3">
-                    <div className="flex items-center text-sm text-gray-500">
-                      <Clock className="h-4 w-4 mr-2" />
-                      <span>{project.startDate} - {project.endDate}</span>
-                    </div>
-                    <div className="flex items-center text-sm text-gray-500">
-                      <Users className="h-4 w-4 mr-2" />
-                      <span>{project.team.join(", ")}</span>
-                    </div>
-                  </div>
                   
                   <div className="mt-6 flex flex-wrap gap-2">
                     {project.tags.map((tag, tagIndex) => (

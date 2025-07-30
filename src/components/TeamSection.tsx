@@ -1,14 +1,15 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle } from '@/components/ui/card';
-import { Twitter, Mail, ArrowUpRight, Globe } from 'lucide-react';
+import { Twitter, Mail, ArrowUpRight, Globe, ChevronDown } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Link } from 'react-router-dom';
 import { useLanguage } from '../contexts/LanguageContext';
+import { Collapsible, CollapsibleContent, CollapsibleTrigger } from '@/components/ui/collapsible';
 
 type TeamMember = {
   key: string;
   position: string;
-  category: 'professor' | 'postdoc' | 'phd' | 'master' | 'alumni';
+  category: 'professor' | 'postdoc' | 'phd' | 'master' | 'postmaster' | 'alumni';
   bio: {
     en: string;
     ko: string;
@@ -31,6 +32,7 @@ type TeamSectionProps = {
 
 const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionHeader = true }) => {
   const { t, language } = useLanguage();
+  const [isExpanded, setIsExpanded] = useState(false);
   
   const teamMembers: TeamMember[] = [
     {
@@ -41,26 +43,25 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
         en: "Leading researcher in AI applications for materials science with expertise in computational materials design and engineering.",
         ko: "전산 재료 설계 및 공학 전문지식을 가진 재료 과학 분야의 AI 응용 선도 연구자."
       },
-      imageSrc: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29ufHx8fHx8MTY3OTkwNTI5Mg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
+      imageSrc: "images/lab_members/professor_image.jpeg",
       featured: true,
       socialLinks: {
-        googleScholar: "https://scholar.google.com/citations?user=example1",
-        email: "hwlee@aimat.kr"
+        googleScholar: "https://scholar.google.com/citations?user=k6UqbkkAAAAJ&hl=ko",
+        email: "h.lee@kims.re.kr"
       }
     },
     {
       key: "ykim",
-      position: "Postdoctoral Researcher",
+      position: "Postdoctoral Researcher, KIMS",
       category: "postdoc",
       bio: {
-        en: "Specializing in advanced materials characterization and AI-driven analysis techniques.",
-        ko: "고급 재료 특성 분석 및 AI 기반 분석 기술 전문."
+        en: "Anisotropy measurement using HE test",
+        ko: "HE 시험을 이용한 이방성 측정"
       },
-      imageSrc: "https://images.unsplash.com/photo-1560250097-0b93528c311a?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29uLG1hbnx8fHx8fHx8MTY3OTkwNTY4NQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
+      imageSrc: "images/lab_members/kimyongnam.png",
       featured: true,
       socialLinks: {
-        googleScholar: "https://scholar.google.com/citations?user=example2",
-        email: "ykim@aimat.kr"
+        email: "ykim@kims.re.kr"
       }
     },
     {
@@ -71,11 +72,10 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
         en: "Expert in computational modeling of materials properties and machine learning applications for materials science.",
         ko: "재료 물성의 전산 모델링 및 재료 과학을 위한 기계 학습 응용 분야 전문가."
       },
-      imageSrc: "https://images.unsplash.com/photo-1607990281513-2c110a25bd8c?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29uLG1hbnx8fHx8fDE2Nzk5MDU2MjA&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
+      imageSrc: "images/lab_members/minhtientran.png",
       featured: true,
       socialLinks: {
-        googleScholar: "https://scholar.google.com/citations?user=example3",
-        email: "mtran@aimat.kr"
+        email: "mtran@kims.re.kr"
       }
     },
     {
@@ -124,49 +124,75 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
     },
     {
       key: "hjlee",
-      position: "MS Candidate",
-      category: "master",
+      position: "Post-Master, PNU & KIMS",
+      category: "postmaster",
       bio: {
-        en: "Focusing on data-driven approaches to predict material properties and optimize processing parameters.",
-        ko: "재료 특성 예측 및 공정 매개변수 최적화를 위한 데이터 기반 접근법 연구."
+        en: "FLD Prediction using ResNet",
+        ko: "ResNet을 이용한 FLD 예측"
       },
-      imageSrc: "https://images.unsplash.com/photo-1568602471122-7832951cc4c5?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29uLG1hbnx8fHx8fHx8MTY3OTkwNTY4NQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
+      imageSrc: "images/lab_members/hanjunlee.png",
       featured: false,
       socialLinks: {
-        googleScholar: "https://scholar.google.com/citations?user=example7",
-        email: "hjlee@aimat.kr"
+        email: "hjlee@kims.re.kr"
       }
     },
     {
       key: "sean",
-      position: "MS Candidate",
-      category: "master",
+      position: "Post-Master, PNU & KIMS",
+      category: "postmaster",
       bio: {
-        en: "Researching AI applications for rapid materials screening and property prediction.",
-        ko: "빠른 재료 스크리닝 및 물성 예측을 위한 AI 응용 연구."
+        en: "AI-based flow stress estimation in Indentation",
+        ko: "압입 시험에서 AI 기반 유동 응력 추정"
       },
-      imageSrc: "https://images.unsplash.com/photo-1573496359142-b8d87734a5a2?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29uLHdvbWFufHx8fHx8MTY3OTkwNTgxNg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
+      imageSrc: "images/lab_members/seongeunan.png",
       featured: false,
       socialLinks: {
-        googleScholar: "https://scholar.google.com/citations?user=example8",
-        email: "sean@aimat.kr"
+        email: "sean@kims.re.kr"
       }
     },
     {
-      key: "jkim",
-      position: "Senior Researcher",
-      category: "alumni",
+      key: "dhkim",
+      position: "Post-Master, UST & KIMS",
+      category: "postmaster",
       bio: {
-        en: "Former member specializing in high-throughput computational screening for advanced materials.",
-        ko: "고급 재료를 위한 고성능 컴퓨터 스크리닝에 특화된 전 연구원."
+        en: "Classification of aerospace parts by deep learning",
+        ko: "딥러닝을 이용한 항공우주 부품 분류"
       },
-      imageSrc: "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29ufHx8fHx8MTY3OTkwNTI5Mg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
+      imageSrc: "images/lab_members/donghyukkim.png",
       featured: false,
       socialLinks: {
-        googleScholar: "https://scholar.google.com/citations?user=example9",
-        email: "jkim@example.com"
+        email: "dhkim@kims.re.kr"
       }
-    }
+    },
+    {
+      key: "phannguyenduchieu",
+      position: "MS-PhD Integrated Course",
+      category: "phd",
+      bio: {
+        en: "Research focus on Generative AI, LLM, LVLM for scientific question answering and lab automation",
+        ko: "생성형 AI, LLM, LVLM을 활용한 과학적 질의응답 및 실험실 자동화 연구"
+      },
+      imageSrc: "images/lab_members/phannguyenduchieu.jpeg",
+      featured: false,
+      socialLinks: {
+        email: "phannguyenduchieu@kims.re.kr"
+      }
+    },
+    // {
+    //   key: "jkim",
+    //   position: "Senior Researcher",
+    //   category: "alumni",
+    //   bio: {
+    //     en: "Former member specializing in high-throughput computational screening for advanced materials.",
+    //     ko: "고급 재료를 위한 고성능 컴퓨터 스크리닝에 특화된 전 연구원."
+    //   },
+    //   imageSrc: "https://images.unsplash.com/photo-1564564321837-a57b7070ac4f?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29ufHx8fHx8MTY3OTkwNTI5Mg&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
+    //   featured: false,
+    //   socialLinks: {
+    //     googleScholar: "https://scholar.google.com/citations?user=example9",
+    //     email: "jkim@example.com"
+    //   }
+    // }
   ];
 
   // Display only featured members on homepage, or all members on the team page
@@ -176,50 +202,228 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
   const professors = displayMembers.filter(member => member.category === 'professor');
   const postdocs = displayMembers.filter(member => member.category === 'postdoc');
   const phdStudents = displayMembers.filter(member => member.category === 'phd');
+  const postMasterStudents = displayMembers.filter(member => member.category === 'postmaster');
   const masterStudents = displayMembers.filter(member => member.category === 'master');
   const alumni = displayMembers.filter(member => member.category === 'alumni');
 
   // Helper function to render team member cards
-  const renderMemberCard = (member: TeamMember) => (
-    <Card key={member.key} className="overflow-hidden border-none shadow-md card-hover">
-      <div className="aspect-[3/4] w-full overflow-hidden">
-        <img 
-          src={member.imageSrc} 
-          alt={t(`team.members.${member.key}.name`) || member.key} 
-          className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
-        />
-      </div>
-      <CardHeader className="pb-2">
-        <CardTitle className="font-heading text-xl">{t(`team.members.${member.key}.name`)}</CardTitle>
-        <CardDescription className="text-aimat-primary font-medium">{t(`team.positions.${member.position}`) || member.position}</CardDescription>
-      </CardHeader>
-      
-      {member.socialLinks && (
-        <CardFooter className="flex gap-4 text-gray-500">
-          {member.socialLinks.googleScholar && (
-            <a href={member.socialLinks.googleScholar} className="hover:text-aimat-primary transition-colors flex items-center gap-2" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer">
-              <Globe size={20} />
-              <span className="text-sm">Google Scholar</span>
-            </a>
-          )}
-          {member.socialLinks.twitter && (
-            <a href={member.socialLinks.twitter} className="hover:text-aimat-primary transition-colors" aria-label="Twitter">
-              <Twitter size={20} />
-            </a>
-          )}
-          {member.socialLinks.email && (
-            <a href={`mailto:${member.socialLinks.email}`} className="hover:text-aimat-primary transition-colors flex items-center gap-2" aria-label="Email">
-              <Mail size={20} />
-              <span className="text-sm">{member.socialLinks.email}</span>
-            </a>
-          )}
-        </CardFooter>
-      )}
-      <CardContent>
-        <p className="text-gray-600">{member.bio[language]}</p>
-      </CardContent>
-    </Card>
-  );
+  const renderMemberCard = (member: TeamMember) => {
+    if (member.category === 'professor') {
+      // For Team page: full-width card with image on left and info on right
+      if (showAll) {
+        return (
+          <Card key={member.key} className="overflow-hidden border-none shadow-lg card-hover w-full">
+            <div className="flex flex-col lg:flex-row">
+              {/* Image section - Fixed size, bo 4 góc */}
+              <div className="lg:w-80 flex-shrink-0">
+                <div className="h-96 lg:h-[500px] overflow-hidden">
+                  <img 
+                    src={member.imageSrc} 
+                    alt={t(`team.members.${member.key}.name`) || member.key} 
+                    className="w-full h-full object-cover object-center transition-transform duration-500 hover:scale-105 rounded-lg"
+                  />
+                </div>
+              </div>
+              
+              {/* Content section - Info cơ bản */}
+              <div className="flex-1 flex flex-col">
+                <CardHeader className="pb-4 pt-8 px-8">
+                  <CardTitle className="font-heading text-3xl mb-4 text-gray-800">{t(`team.members.${member.key}.name`)}</CardTitle>
+                  <div className="mb-4 bg-gradient-to-r from-blue-50 to-indigo-50 p-4 rounded-lg border border-blue-100">
+                    {t(`team.members.${member.key}.position`).split('||').map((section, sectionIndex) => (
+                      <div key={sectionIndex} className={sectionIndex > 0 ? "mt-4" : ""}>
+                        {section.split('|').map((line, lineIndex) => (
+                          <div key={lineIndex} className={lineIndex === 0 ? "font-bold text-lg text-aimat-primary mb-1" : "text-gray-600 text-sm ml-2"}>
+                            {line}
+                          </div>
+                        ))}
+                      </div>
+                    ))}
+                  </div>
+                  <div className="text-gray-700 text-sm leading-relaxed whitespace-pre-line bg-gray-50 p-4 rounded-lg border-l-4 border-aimat-primary">
+                    {t(`team.members.${member.key}.contact`)}
+                  </div>
+                </CardHeader>
+                
+                {member.socialLinks && (
+                  <CardFooter className="flex flex-col sm:flex-row gap-3 sm:gap-6 text-gray-500 pt-0 px-8">
+                    {member.socialLinks.googleScholar && (
+                      <a href={member.socialLinks.googleScholar} className="hover:text-aimat-primary transition-colors flex items-center justify-center gap-2 bg-white px-3 py-2 rounded-lg shadow-sm border hover:shadow-md w-full sm:w-auto" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer">
+                        <Globe size={18} />
+                        <span className="text-sm font-medium">Google Scholar</span>
+                      </a>
+                    )}
+                    {member.socialLinks.twitter && (
+                      <a href={member.socialLinks.twitter} className="hover:text-aimat-primary transition-colors bg-white p-2 rounded-lg shadow-sm border hover:shadow-md flex items-center justify-center w-full sm:w-auto" aria-label="Twitter">
+                        <Twitter size={18} />
+                      </a>
+                    )}
+                    {member.socialLinks.email && (
+                      <a href={`mailto:${member.socialLinks.email}`} className="hover:text-aimat-primary transition-colors flex items-center justify-center gap-2 bg-white px-3 py-2 rounded-lg shadow-sm border hover:shadow-md w-full sm:w-auto" aria-label="Email">
+                        <Mail size={18} />
+                        <span className="text-sm font-medium">{member.socialLinks.email}</span>
+                      </a>
+                    )}
+                  </CardFooter>
+                )}
+              </div>
+            </div>
+            
+            {/* Description và View More - Full width xuống dưới */}
+            <CardContent className="px-8 pb-8 pt-4 mt-2">
+              <div className="bg-gradient-to-br from-blue-50 to-indigo-50 p-6 rounded-xl mb-8 border border-blue-100">
+                <p className="text-gray-700 leading-relaxed font-medium">{member.bio[language]}</p>
+              </div>
+              
+              <Collapsible open={isExpanded} onOpenChange={setIsExpanded}>
+                <CollapsibleTrigger asChild>
+                  <Button 
+                    variant="outline" 
+                    className="w-full flex items-center justify-center gap-3 bg-gradient-to-r from-aimat-primary to-blue-600 text-white border-none hover:from-aimat-primary/90 hover:to-blue-600/90 shadow-lg hover:shadow-xl transition-all duration-300 py-4 px-6 rounded-xl font-semibold text-base"
+                  >
+                    {isExpanded ? t('team.viewLessDetails') : t('team.viewMoreDetails')}
+                    <ChevronDown className={`h-5 w-5 transition-transform duration-300 ${isExpanded ? 'rotate-180' : ''}`} />
+                  </Button>
+                </CollapsibleTrigger>
+                <CollapsibleContent className="mt-6 space-y-6">
+                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <h4 className="font-bold text-lg text-aimat-primary mb-3 flex items-center gap-2">
+                      <div className="w-3 h-3 bg-aimat-primary rounded-full"></div>
+                      {t('team.professionalExperience')}
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{t(`team.members.${member.key}.experience`)}</p>
+                  </div>
+                  
+                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <h4 className="font-bold text-lg text-aimat-primary mb-3 flex items-center gap-2">
+                      <div className="w-3 h-3 bg-aimat-primary rounded-full"></div>
+                      {t('team.education')}
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{t(`team.members.${member.key}.education`)}</p>
+                  </div>
+                  
+                  <div className="bg-white rounded-xl p-6 shadow-sm border border-gray-100">
+                    <h4 className="font-bold text-lg text-aimat-primary mb-3 flex items-center gap-2">
+                      <div className="w-3 h-3 bg-aimat-primary rounded-full"></div>
+                      {t('team.dissertation')}
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line italic">{t(`team.members.${member.key}.dissertation`)}</p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-green-50 to-emerald-50 rounded-xl p-6 border border-green-100">
+                    <h4 className="font-bold text-lg text-green-700 mb-3 flex items-center gap-2">
+                      <div className="w-3 h-3 bg-green-600 rounded-full"></div>
+                      {t('team.researchInterests')}
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{t(`team.members.${member.key}.interests`)}</p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-purple-50 to-violet-50 rounded-xl p-6 border border-purple-100">
+                    <h4 className="font-bold text-lg text-purple-700 mb-3 flex items-center gap-2">
+                      <div className="w-3 h-3 bg-purple-600 rounded-full"></div>
+                      {t('team.professionalService')}
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{t(`team.members.${member.key}.service`)}</p>
+                  </div>
+                  
+                  <div className="bg-gradient-to-br from-yellow-50 to-orange-50 rounded-xl p-6 border border-yellow-100">
+                    <h4 className="font-bold text-lg text-orange-700 mb-3 flex items-center gap-2">
+                      <div className="w-3 h-3 bg-orange-600 rounded-full"></div>
+                      {t('team.awards')}
+                    </h4>
+                    <p className="text-gray-700 text-sm leading-relaxed whitespace-pre-line">{t(`team.members.${member.key}.awards`)}</p>
+                  </div>
+                </CollapsibleContent>
+              </Collapsible>
+            </CardContent>
+          </Card>
+        );
+      } else {
+        // For Home page: simple card without view details button
+        return (
+          <Card key={member.key} className="overflow-hidden border-none shadow-md card-hover">
+            <div className="aspect-[3/4] w-full overflow-hidden">
+              <img 
+                src={member.imageSrc} 
+                alt={t(`team.members.${member.key}.name`) || member.key} 
+                className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+              />
+            </div>
+        <CardHeader className="pb-2">
+          <CardTitle className="font-heading text-xl">{t(`team.members.${member.key}.name`)}</CardTitle>
+          <CardDescription className="text-aimat-primary font-medium">{t(`team.positions.${member.position.split(',')[0]}`) || member.position}</CardDescription>
+        </CardHeader>            {member.socialLinks && (
+              <CardFooter className="flex gap-4 text-gray-500">
+                {member.socialLinks.googleScholar && (
+                  <a href={member.socialLinks.googleScholar} className="hover:text-aimat-primary transition-colors flex items-center gap-2" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer">
+                    <Globe size={20} />
+                    <span className="text-sm">Google Scholar</span>
+                  </a>
+                )}
+                {member.socialLinks.twitter && (
+                  <a href={member.socialLinks.twitter} className="hover:text-aimat-primary transition-colors" aria-label="Twitter">
+                    <Twitter size={20} />
+                  </a>
+                )}
+                {member.socialLinks.email && (
+                  <a href={`mailto:${member.socialLinks.email}`} className="hover:text-aimat-primary transition-colors flex items-center gap-2" aria-label="Email">
+                    <Mail size={20} />
+                    <span className="text-sm">{member.socialLinks.email}</span>
+                  </a>
+                )}
+              </CardFooter>
+            )}
+            
+            <CardContent>
+              <p className="text-gray-600">{member.bio[language]}</p>
+            </CardContent>
+          </Card>
+        );
+      }
+    }
+
+    // Default card for other members
+    return (
+      <Card key={member.key} className="overflow-hidden border-none shadow-md card-hover">
+        <div className="aspect-[3/4] w-full overflow-hidden">
+          <img 
+            src={member.imageSrc} 
+            alt={t(`team.members.${member.key}.name`) || member.key} 
+            className="w-full h-full object-cover transition-transform duration-500 hover:scale-105"
+          />
+        </div>
+        <CardHeader className="pb-2">
+          <CardTitle className="font-heading text-xl">{t(`team.members.${member.key}.name`)}</CardTitle>
+          <CardDescription className="text-aimat-primary font-medium">{t(`team.positions.${member.position.split(',')[0]}`) || member.position}</CardDescription>
+        </CardHeader>
+        
+        {member.socialLinks && (
+          <CardFooter className="flex gap-4 text-gray-500">
+            {member.socialLinks.googleScholar && (
+              <a href={member.socialLinks.googleScholar} className="hover:text-aimat-primary transition-colors flex items-center gap-2" aria-label="Google Scholar" target="_blank" rel="noopener noreferrer">
+                <Globe size={20} />
+                <span className="text-sm">Google Scholar</span>
+              </a>
+            )}
+            {member.socialLinks.twitter && (
+              <a href={member.socialLinks.twitter} className="hover:text-aimat-primary transition-colors" aria-label="Twitter">
+                <Twitter size={20} />
+              </a>
+            )}
+            {member.socialLinks.email && (
+              <a href={`mailto:${member.socialLinks.email}`} className="hover:text-aimat-primary transition-colors flex items-center gap-2" aria-label="Email">
+                <Mail size={20} />
+                <span className="text-sm">{member.socialLinks.email}</span>
+              </a>
+            )}
+          </CardFooter>
+        )}
+        <CardContent>
+          <p className="text-gray-600">{member.bio[language]}</p>
+        </CardContent>
+      </Card>
+    );
+  };
 
   return (
     <section id="team">
@@ -247,7 +451,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
             {professors.length > 0 && (
               <>
                 <h3 className="font-heading text-2xl font-semibold mb-8 text-center">Principal Investigator</h3>
-                <div className="grid grid-cols-1 max-w-md mx-auto mb-16">
+                <div className="mb-16">
                   {professors.map(renderMemberCard)}
                 </div>
               </>
@@ -269,6 +473,16 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
                 <h3 className="font-heading text-2xl font-semibold mb-8 text-center">PhD/Integrated Students</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                   {phdStudents.map(renderMemberCard)}
+                </div>
+              </>
+            )}
+            
+            {/* Post-Master Researchers */}
+            {postMasterStudents.length > 0 && (
+              <>
+                <h3 className="font-heading text-2xl font-semibold mb-8 text-center">Post-Master Researchers</h3>
+                <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
+                  {postMasterStudents.map(renderMemberCard)}
                 </div>
               </>
             )}
@@ -312,12 +526,12 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
             <p className="text-gray-600 max-w-2xl mx-auto mb-8">
               {t('team.joinDescription')}
             </p>
-            <a 
-              href="#contact" 
+            <Link 
+              to="/join-us" 
               className="inline-block px-6 py-3 bg-aimat-primary text-white rounded-lg font-medium hover:bg-aimat-secondary transition"
             >
               {t('team.apply')}
-            </a>
+            </Link>
           </div>
         )}
       </div>
