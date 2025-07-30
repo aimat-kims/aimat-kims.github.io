@@ -159,35 +159,35 @@ const translations: Record<string, Record<Language, string>> = {
     ko: "지원하기"
   },
   
-  // Team member roles
-  "team.positions.Principal Investigator": {
-    en: "Principal Investigator",
-    ko: "수석 연구원"
-  },
-  "team.positions.Postdoctoral Researcher": {
-    en: "Postdoctoral Researcher",
-    ko: "박사후 연구원"
-  },
-  "team.positions.PhD Candidate": {
-    en: "PhD Candidate",
-    ko: "박사 과정"
-  },
-  "team.positions.MS-PhD Integrated Course": {
-    en: "MS-PhD Integrated Course",
-    ko: "석박사 통합과정"
-  },
-  "team.positions.MS Candidate": {
-    en: "MS Candidate",
-    ko: "석사 과정"
-  },
-  "team.positions.Post-Master": {
-    en: "Post-Master",
-    ko: "석사 후 연구원"
-  },
-  "team.positions.Integrated Student": {
-    en: "Integrated Student",
-    ko: "통합과정 학생"
-  },
+  // // Team member roles
+  // "team.positions.Principal Investigator": {
+  //   en: "Principal Investigator",
+  //   ko: "수석 연구원"
+  // },
+  // "team.positions.Postdoctoral Researcher": {
+  //   en: "Postdoctoral Researcher",
+  //   ko: "박사후 연구원"
+  // },
+  // "team.positions.PhD Candidate": {
+  //   en: "PhD Candidate",
+  //   ko: "박사 과정"
+  // },
+  // "team.positions.MS-PhD Integrated Course": {
+  //   en: "MS-PhD Integrated Course",
+  //   ko: "석박사 통합과정"
+  // },
+  // "team.positions.MS Candidate": {
+  //   en: "MS Candidate",
+  //   ko: "석사 과정"
+  // },
+  // "team.positions.Post-Master": {
+  //   en: "Post-Master",
+  //   ko: "석사 후 연구원"
+  // },
+  // "team.positions.Integrated Student": {
+  //   en: "Integrated Student",
+  //   ko: "통합과정 학생"
+  // },
   
   // Team member names
   "team.members.hwlee.name": {
@@ -259,11 +259,11 @@ const translations: Record<string, Record<Language, string>> = {
     ko: "수상/연구비"
   },
   "team.members.ykim.name": {
-    en: "Dr. Yong-Nam Kim",
+    en: "Yong-Nam Kim, Ph.D",
     ko: "김용남 박사"
   },
   "team.members.mtran.name": {
-    en: "Dr. Minh Tien Tran",
+    en: "Minh Tien Tran, Ph.D",
     ko: "민 티엔 트란 박사"
   },
   "team.members.phcuong.name": {
@@ -275,7 +275,7 @@ const translations: Record<string, Record<Language, string>> = {
     ko: "Mooyeong Joo"
   },
   "team.members.nhnam.name": {
-    en: "Nguyen Hai Nam",
+    en: "Nguyen Hoang Hai Nam",
     ko: "응우옌 하이 남"
   },
   "team.members.hjlee.name": {
@@ -283,7 +283,7 @@ const translations: Record<string, Record<Language, string>> = {
     ko: "이한준"
   },
   "team.members.sean.name": {
-    en: "Seong-Eun An",
+    en: "An Sung Eun",
     ko: "안성은"
   },
   "team.members.dhkim.name": {

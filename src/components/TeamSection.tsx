@@ -61,7 +61,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
       imageSrc: "images/lab_members/kimyongnam.png",
       featured: true,
       socialLinks: {
-        email: "ykim@kims.re.kr"
+        // email: "ykim@kims.re.kr"
       }
     },
     {
@@ -75,12 +75,13 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
       imageSrc: "images/lab_members/minhtientran.png",
       featured: true,
       socialLinks: {
-        email: "mtran@kims.re.kr"
+        email: "mttran@kims.re.kr",
+        googleScholar: "https://scholar.google.com/citations?user=VppKrJMAAAAJ"
       }
     },
     {
       key: "phcuong",
-      position: "PhD Candidate",
+      position: "PhD Candidate, UST & KIMS",
       category: "phd",
       bio: {
         en: "Additive manufacturing; Generative models (Stable diffusion, diffusion models); Large Language Models (LLMs)",
@@ -94,7 +95,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
     },
     {
       key: "mooyeong_joo",
-      position: "PhD Candidate",
+      position: "PhD Candidate, UST & KIMS",
       category: "phd",
       bio: {
         en: "Interested in integrating crystal plasticity model with deep learning to develop hybrid frameworks that improve the predictive accuracy and computational efficiency",
@@ -103,57 +104,16 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
       imageSrc: "images/lab_members/mooyeong_joo.jpg",
       featured: false,
       socialLinks: {
-        googleScholar: "https://scholar.google.com/citations?user=EvrZBGQAAAAJ",
+        // googleScholar: "https://scholar.google.com/citations?user=EvrZBGQAAAAJ",
         email: "mooyeongj@kims.re.kr",
       }
     },
-    {
-      key: "nhnam",
-      position: "MS-PhD Integrated Course",
-      category: "phd",
-      bio: {
-        en: "Working on integrating physics-based models with machine learning for accelerated materials discovery.",
-        ko: "가속화된 재료 발견을 위한 물리 기반 모델과 기계 학습의 통합 연구."
-      },
-      imageSrc: "https://images.unsplash.com/photo-1506794778202-cad84cf45f1d?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8cGVyc29uLG1hbnx8fHx8fHx8MTY3OTkwNTY4NQ&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=400",
-      featured: false,
-      socialLinks: {
-        googleScholar: "https://scholar.google.com/citations?user=example6",
-        email: "nhnam@aimat.kr"
-      }
-    },
-    {
-      key: "hjlee",
-      position: "Post-Master, PNU & KIMS",
-      category: "postmaster",
-      bio: {
-        en: "FLD Prediction using ResNet",
-        ko: "ResNet을 이용한 FLD 예측"
-      },
-      imageSrc: "images/lab_members/hanjunlee.png",
-      featured: false,
-      socialLinks: {
-        email: "hjlee@kims.re.kr"
-      }
-    },
-    {
-      key: "sean",
-      position: "Post-Master, PNU & KIMS",
-      category: "postmaster",
-      bio: {
-        en: "AI-based flow stress estimation in Indentation",
-        ko: "압입 시험에서 AI 기반 유동 응력 추정"
-      },
-      imageSrc: "images/lab_members/seongeunan.png",
-      featured: false,
-      socialLinks: {
-        email: "sean@kims.re.kr"
-      }
-    },
+    
+    
     {
       key: "dhkim",
-      position: "Post-Master, UST & KIMS",
-      category: "postmaster",
+      position: "PhD Candidate, UST & KIMS",
+      category: "phd",
       bio: {
         en: "Classification of aerospace parts by deep learning",
         ko: "딥러닝을 이용한 항공우주 부품 분류"
@@ -161,12 +121,27 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
       imageSrc: "images/lab_members/donghyukkim.png",
       featured: false,
       socialLinks: {
-        email: "dhkim@kims.re.kr"
+        // email: "dhkim@kims.re.kr"
+      }
+    },
+    {
+      key: "nhnam",
+      position: "MS-PhD Integrated Course, UST & KIMS",
+      category: "phd",
+      bio: {
+        en: "Working on integrating physics-based models with machine learning for accelerated materials discovery.",
+        ko: "가속화된 재료 발견을 위한 물리 기반 모델과 기계 학습의 통합 연구."
+      },
+      imageSrc: "images/lab_members/nguyenhoanghainam.png",
+      featured: false,
+      socialLinks: {
+        // googleScholar: "https://scholar.google.com/citations?user=example6",
+        email: "namhhn@kims.re.kr"
       }
     },
     {
       key: "phannguyenduchieu",
-      position: "MS-PhD Integrated Course",
+      position: "MS-PhD Integrated Course, UST & KIMS",
       category: "phd",
       bio: {
         en: "Research focus on Generative AI, LLM, LVLM for scientific question answering and lab automation",
@@ -175,7 +150,36 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
       imageSrc: "images/lab_members/phannguyenduchieu.jpeg",
       featured: false,
       socialLinks: {
-        email: "phannguyenduchieu@kims.re.kr"
+        email: "hieupnd@kims.re.kr",
+        googleScholar: "https://scholar.google.com/citations?user=7qVSygEAAAAJ"
+      }
+    },
+    {
+      key: "hjlee",
+      position: "Post-Master, PNU & KIMS",
+      category: "phd",
+      bio: {
+        en: "FLD Prediction using ResNet",
+        ko: "ResNet을 이용한 FLD 예측"
+      },
+      imageSrc: "images/lab_members/hanjunlee.png",
+      featured: false,
+      socialLinks: {
+        // email: "hjlee@kims.re.kr"
+      }
+    },
+    {
+      key: "sean",
+      position: "Master Candidate, PNU & KIMS",
+      category: "phd",
+      bio: {
+        en: "AI-driven indentation-based material property characterization",
+        ko: "압입 시험에서 AI 기반 유동 응력 추정"
+      },
+      imageSrc: "images/lab_members/seongeunan.jpg",
+      featured: false,
+      socialLinks: {
+        email: "anse14@kims.re.kr"
       }
     },
     // {
@@ -351,7 +355,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
             </div>
         <CardHeader className="pb-2">
           <CardTitle className="font-heading text-xl">{t(`team.members.${member.key}.name`)}</CardTitle>
-          <CardDescription className="text-aimat-primary font-medium">{t(`team.positions.${member.position.split(',')[0]}`) || member.position}</CardDescription>
+          <CardDescription className="text-aimat-primary font-medium">{member.position}</CardDescription>
         </CardHeader>            {member.socialLinks && (
               <CardFooter className="flex gap-4 text-gray-500">
                 {member.socialLinks.googleScholar && (
@@ -394,7 +398,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
         </div>
         <CardHeader className="pb-2">
           <CardTitle className="font-heading text-xl">{t(`team.members.${member.key}.name`)}</CardTitle>
-          <CardDescription className="text-aimat-primary font-medium">{t(`team.positions.${member.position.split(',')[0]}`) || member.position}</CardDescription>
+          <CardDescription className="text-aimat-primary font-medium">{member.position}</CardDescription>
         </CardHeader>
         
         {member.socialLinks && (
@@ -470,7 +474,7 @@ const TeamSection: React.FC<TeamSectionProps> = ({ showAll = false, showSectionH
             {/* PhD/Integrated Students */}
             {phdStudents.length > 0 && (
               <>
-                <h3 className="font-heading text-2xl font-semibold mb-8 text-center">PhD/Integrated Students</h3>
+                <h3 className="font-heading text-2xl font-semibold mb-8 text-center">Students</h3>
                 <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 mb-16">
                   {phdStudents.map(renderMemberCard)}
                 </div>

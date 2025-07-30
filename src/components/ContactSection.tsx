@@ -30,7 +30,7 @@ const ContactSection = () => {
                     <div>
                       <h4 className="font-heading font-medium text-lg">Location</h4>
                       <p className="text-gray-600">
-                        AIMAT Lab, Room 456<br />
+                        AIMAT Lab,<br />
                         Korea Institute of Materials Science<br />
                         797 Changwon-daero, Seongsan-gu<br />
                         Changwon, 51508, Republic of Korea
@@ -44,7 +44,7 @@ const ContactSection = () => {
                     </div>
                     <div>
                       <h4 className="font-heading font-medium text-lg">Email</h4>
-                      <a href="mailto:contact@aimat.kr" className="text-aimat-primary hover:underline">contact@aimat.kr</a>
+                      <a href="mailto:contact@aimat.kr" className="text-aimat-primary hover:underline">h.lee@kims.re.kr</a>
                     </div>
                   </div>
                 </div>
